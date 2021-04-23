@@ -8,8 +8,7 @@
     <link href="../css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/components/input_type.css">
     <link rel="stylesheet" href="../content/font/fontawesome-5.15.1/css/all.css">
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -17,12 +16,23 @@
     <h1>combox selected</h1>
 
     <div class="container">
-        <h2>Giới tính</h2>
+        <label>Giới tính</label>
         <div class="selected">
-            <input type="text" name="" id="input_selected" class="dropdown">
-            <button class="btn" id="btn_selected">
-                <i class="fas fa-angle-down" style="font-size: 24px; color: rgba(87, 85, 85, 0.733);"></i>
-            </button>
+            <input type="text" name="" id="input_selected" class="input" value="">
+            <div class="icon-down fas fa-angle-down" id="btn_selected">
+                <!-- <i class="" style="font-size: 20px; color: rgba(87, 85, 85, 0.733);padding: 10px;"></i> -->
+            </div>
+        </div>
+        <div class="options-container active" id="options_container">
+            <div class="option">
+                nam
+            </div>
+            <div class="option">
+                nu
+            </div>
+            <div class="option">
+                khac
+            </div>
         </div>
     </div>
 
@@ -31,15 +41,23 @@
 
 
 
+    <script>
+        $(document).ready(function() {
+            $("#btn_selected").click(function() {
+                $("#options_container").removeClass("active")
+                $(".selected").addClass("border")
+            });
+            $(".option").click(function() {
+                var current = $(this).text();
+                current = current.trim()
+                console.log(current)
+                $("#input_selected").val(current)
+                $("#options_container").addClass("active")
+            });
 
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+        });
+    </script>
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 </body>
 
 </html>
