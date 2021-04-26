@@ -156,47 +156,47 @@ function btnClick() {
  */
 function mouseDownKeyBoard(inp) {
     inp.addEventListener("keydown", function(e) {
-        var x = document.getElementById('list');
-        if (x) x = x.getElementsByTagName("LI");
+        var key = document.getElementById('list');
+        if (key) key = key.getElementsByTagName("LI");
         if (e.keyCode == 40) { //down
             currentFocus++;
             /* Thêm class hover vào thẻ LI */
-            addActive(x);
-        } else if (e.keyCode == 38) { //up
+            addActive(key);
+        } else if (key.keyCode == 38) { //up
 
             currentFocus--;
             /* Thêm class hover vào thẻ LI */
-            addActive(x);
+            addActive(key);
         } else if (e.keyCode == 13) { //enter
             if (currentFocus > -1) {
-                if (x) x[currentFocus].click();
+                if (key) key[currentFocus].click();
             }
         }
     })
 }
 
 /* Thêm class hover vào thẻ LI 
- * x: các thẻ LI được lấy ra từ UL
+ * key: các thẻ LI được lấy ra từ UL
  * CreatedBy: LMDuc (25/04/2021)
  */
-function addActive(x) {
-    if (!x) return false;
+function addActive(key) {
+    if (!key) return false;
     /* Xóa tất cả các class hover của tất cả thẻ LI */
-    removeActive(x);
+    removeActive(key);
     /* currentFocus > các thẻ LI được tạo ra thì gán currentFocus = 0 để nó nhảy về vị trí đầu tiên */
-    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus >= key.length) currentFocus = 0;
 
-    if (currentFocus < 0) currentFocus = (x.length - 1);
+    if (currentFocus < 0) currentFocus = (key.length - 1);
     /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add("hover");
+    key[currentFocus].classList.add("hover");
 }
 
 /* Xóa tất cả các class hover của tất cả thẻ LI 
  * CreatedBy: LMDuc (25/04/2021)
  */
-function removeActive(x) {
-    for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("hover");
+function removeActive(key) {
+    for (var i = 0; i < key.length; i++) {
+        key[i].classList.remove("hover");
     }
 }
 
