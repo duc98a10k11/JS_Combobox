@@ -15,49 +15,20 @@
 <body>
     <h1>combox selected</h1>
 
-    <div class="container">
-        <label>Giới tính</label>
-        <div class="selected">
-            <input type="text" name="" id="input_selected" class="input" value="">
-            <div class="icon-down fas fa-angle-down" id="btn_selected">
-                <!-- <i class="" style="font-size: 20px; color: rgba(87, 85, 85, 0.733);padding: 10px;"></i> -->
-            </div>
+    <div class="content" id="cbxGender">
+
+        <div class="field">
+            <input type="text" id="input" placeholder="" class="inputCBX" title="Giới tính">
+            <button class="btn fas fa-angle-down" id="button"></button>
         </div>
-        <div class="options-container active" id="options_container">
-            <div class="option">
-                nam
-            </div>
-            <div class="option">
-                nu
-            </div>
-            <div class="option">
-                khac
-            </div>
-        </div>
+        <ul class="data-list invisible" id="list"></ul>
+    </div>
     </div>
 
 
 
 
-
-
-    <script>
-        $(document).ready(function() {
-            $("#btn_selected").click(function() {
-                $("#options_container").removeClass("active")
-                $(".selected").addClass("border")
-            });
-            $(".option").click(function() {
-                var current = $(this).text();
-                current = current.trim()
-                console.log(current)
-                $("#input_selected").val(current)
-                $("#options_container").addClass("active")
-            });
-
-        });
-    </script>
-
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
