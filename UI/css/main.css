@@ -1,7 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.item {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
 .content .field {
-    position: absolute;
+    /* position: absolute;
     top: 100px;
-    left: 100px;
+    left: 100px; */
     height: 40px;
     width: 240px;
     display: flex;
@@ -10,6 +22,15 @@
 
 .invisible {
     display: none;
+}
+
+.item input {
+    height: 40px;
+    width: 200px;
+    outline: none;
+    border: 1px solid #bbb;
+    padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .content {}
@@ -53,9 +74,9 @@ ul {
     padding: 0;
     width: 240px;
     height: 120px;
-    position: absolute;
+    /* position: absolute;
     top: 145px;
-    left: 100px;
+    left: 100px; */
 }
 
 
